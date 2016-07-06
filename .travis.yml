@@ -14,7 +14,7 @@ script:
     -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4'
     -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=8.4'
   | xcpretty && 
-  xcodebuild test -project LayoutKit.xcodeproj -scheme LayoutKit-macOS -sdk macosx10.11 | xcpretty
+  xcodebuild clean test -project LayoutKit.xcodeproj -scheme LayoutKit-macOS -sdk macosx10.11 | xcpretty
   
 after_success:
   - bash <(curl -s https://codecov.io/bash)
